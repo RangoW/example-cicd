@@ -19,7 +19,7 @@ jobs:
         ./a.exe
     - name: sign
       run:
-        ssigncode.exe vsign -s https://vsign.trustasia.com --cert_from csign -u ${{ vars.OPERATOR_HASH }} --cert_hash  ${{ vars.OPERATOR_HASH }} -i a.exe -o a_signed.exe
+        ssigncode.exe vsign -s https://vsign.trustasia.com --cert_from csign -u ${{ example-cicd.OPERATOR_HASH }} --cert_hash  ${{ example-cicd.CERT_HASH }} -i a.exe -o a_signed.exe
       
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4.4.3
